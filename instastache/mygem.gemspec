@@ -16,8 +16,12 @@ Gem::Specification.new do |s|
   s.files = Dir["{lib}/**/*"] + ["Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
   s.require_paths = ["lib"]
+  
+  s.add_dependency 'instagram'
+  s.add_dependency 'sinatra'
 
   # Development Dependencies
   s.add_development_dependency "bundler"  , "~> 1.0.0"
   s.add_development_dependency "minitest" , "~> 2.2.2"
+    s.add_development_dependency "ruby-debug19"
 end
