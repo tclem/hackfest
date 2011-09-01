@@ -14,7 +14,8 @@ module Instastache
     end
 
     get '/' do
-      @urls = Instagram.tag_recent_media('girl').data.map do |i|
+      @action = params[:action] ||= 'girl'
+      @urls = Instagram.tag_recent_media(@action).data.map do |i|
       # @urls = Instagram.media_popular.map do |i|
         url = i[:images][:standard_resolution][:url]
         Instastache.mustachify(url)
