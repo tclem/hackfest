@@ -5,6 +5,7 @@ PATH
       instagram
 
 GEM
+  remote: http://rubygems.org/
   specs:
     addressable (2.2.6)
     faraday (0.5.7)
