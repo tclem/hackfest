@@ -1,10 +1,9 @@
-require "instastache/version"
+# $LOAD_PATH.unshift(File.expand_path('./lib', File.dirname(__FILE__)))
 
 require 'sinatra'
 require 'erb'
 require 'instagram'
 
-require "instastache/server"
 
 module Instastache
   def self.mustachify(url)
