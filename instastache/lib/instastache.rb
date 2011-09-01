@@ -1,6 +1,7 @@
 require "instastache/version"
 
 require 'sinatra'
+require 'erb'
 require 'instagram'
 
 require "instastache/server"

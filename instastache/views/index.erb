@@ -1,0 +1,29 @@
+<html>
+  
+</html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Instastache!</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" charset="utf-8">
+      $(document).ready(function() {
+        $('a').click(function(e) {
+          $(this).toggleClass('hidden');
+          $(this).next().toggleClass('hidden');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <a href="#" id="0"><img src="http://mustachify.me/?src=http://images.instagram.com/media/2011/08/31/68b7648aa79641028b6cfa10d3f8eb60_7.jpg" /></a>
+    <% @urls.each_with_index do |url, i| %>
+      <a href="#" class="hidden" id="<%= i + 1 %>"><img src="<%= url %>" /></a>
+    <% end %>
+  </body>
+</html>
