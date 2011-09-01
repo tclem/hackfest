@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'erb'
+require 'instastache'
 
 module Instastache
   class Server < Sinatra::Base
@@ -19,7 +20,6 @@ module Instastache
     get '/' do
       @action = params[:action] ||= 'girl'
       @urls = Instagram.tag_recent_media(@action).data.map do |i|
-      # @urls = Instagram.media_popular.map do |i|
         url = i[:images][:standard_resolution][:url]
         Instastache.mustachify(url)
       end
