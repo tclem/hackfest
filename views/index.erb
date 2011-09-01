@@ -13,6 +13,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" charset="utf-8">
       $(document).ready(function() {
+        $('a.mustache-pic').first().toggleClass('hidden');
         $('a.mustache-pic').click(function(e) {
           $(this).toggleClass('hidden');
           $(this).next().toggleClass('hidden');
@@ -33,7 +34,9 @@
       <input type='text' name="action" value="<%= @action %>" />
       <input type='submit' />
     </form>
-    <a href="#" id="0" class="mustache-pic" ><img src="http://mustachify.me/?src=http://images.instagram.com/media/2011/08/31/68b7648aa79641028b6cfa10d3f8eb60_7.jpg" /></a>
+    <% if @action == 'girl' %>
+      <a href="#" id="0" class="mustache-pic hidden" ><img src="http://mustachify.me/?src=http://images.instagram.com/media/2011/08/31/68b7648aa79641028b6cfa10d3f8eb60_7.jpg" /></a>
+    <% end %>
     <% @urls.each_with_index do |url, i| %>
       <a href="#" class="mustache-pic hidden" id="<%= i + 1 %>"><img src="<%= url %>" /></a>
     <% end %>
