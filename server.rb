@@ -1,3 +1,6 @@
+require 'sinatra'
+require 'erb'
+
 module Instastache
   class Server < Sinatra::Base
 
